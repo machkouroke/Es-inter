@@ -3,12 +3,11 @@
  abstract class Model
 {
     //Infos de la base
-    private $cd = "mysql:host=localhost;dbname=esinter";
+    private $cd = "mysql:host=localhost;dbname=Esinter";
     private $username = "root";
-    private $password = "claudine";
+    private $password = "";
 
     protected $_connexion;
-    //public $id;
     public $table;
 
     public function get_connection()
