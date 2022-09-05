@@ -1,4 +1,7 @@
 <?php
+namespace controllers;
+use models\Site;
+use view\sites\index;
 
 class Sites extends Controller
 {

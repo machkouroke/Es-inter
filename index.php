@@ -1,4 +1,15 @@
 <?php
+
+/**
+ * Permet d'inclure le fichier juste à l'appel du namespace
+ */
+spl_autoload_register(static function (string $path) {
+    $path = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . $path . '.php';
+    require_once($path);
+});
+
+
+
 define("ROOT",str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
 const CSS_URL = ROOT . 'views/css/';
 define("IMG_URL",ROOT.'images/');

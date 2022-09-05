@@ -1,5 +1,9 @@
 <?php
 
+namespace controllers;
+use models\Outil;
+use view\outils\index;
+
 class Outils extends Controller
 {
     public function __construct()
@@ -41,7 +45,7 @@ class Outils extends Controller
     }
 
     public function delete($id){
-        $user = $this->User->del($id);
+        $user = $this->Outil->del($id);
         $success = "Outil bien supprimé";
         $this->render('form',compact('success'));
 

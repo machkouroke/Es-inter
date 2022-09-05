@@ -1,5 +1,10 @@
 <?php
 
+namespace models;
+
+use controllers\Users;
+use view\users\index;
+
 class User extends Model
 {
 

@@ -1,5 +1,10 @@
 <?php
 
+namespace models;
+
+use controllers\Sites;
+use view\sites\index;
+
 class Site extends Model
 {
 

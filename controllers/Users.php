@@ -1,6 +1,8 @@
 <?php
 
-
+namespace controller;
+use models\User;
+use views\users\index;
 
 class Users extends Controller
 {
