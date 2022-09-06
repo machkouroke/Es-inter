@@ -1,16 +1,11 @@
 <?php
 
-namespace models;
-
-use controllers\Users;
-use view\users\index;
-
 class User extends Model
 {
 
     public function __construct(){
         $this->get_connection();
-        $this->role = Role::FROM($user['role']);
+
     }
 
 

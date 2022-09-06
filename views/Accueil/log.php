@@ -11,7 +11,7 @@ $title = "Connection";
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" type="text/css" href="Inscr.css">
  <title>ES-Inter</title>
- <link rel="icon" type="image/png" href="Medias/logprin.jpg">
+ <link rel="icon" type="image/png" href="Medias/logprin.png">
 <style>
   body{
     background-color: white;
@@ -45,11 +45,11 @@ inputs.forEach(input => {
 <body>
  <div class="container">
   <div class="img">
-    <img src="Medias/Maintr.mp4"/>
+    <img src="Medias/Maintr.mp4" alt=""/>
   </div>
   <div class="login-content">
-   <form action="index.php?action=login" method="post">
-    <img src="Medias/logprin.png">
+   <form action="route.php?action=login" method="post">
+    <img src="Medias/logprin.png" alt="">
     <h2 class="title">Connection</h2>
              <div class="input-div one">
                 <div class="i">
@@ -81,4 +81,4 @@ inputs.forEach(input => {
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require(BASE_DIR . 'views\base.php'); ?>
+<?php require(ROOT . 'views\base.php'); ?>

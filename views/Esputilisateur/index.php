@@ -1,47 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>ESPACE Utilisateur</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="views/css/espaceutil.css" />
+
 </head>
-<body>
+<body class="is-preload">
 
-<div class="card">
-    <img src="..." class="card-img-top" alt="...">
+<!-- Header -->
+<header id="header">
+    <div class="content">
+        <h1><a href="#">Espace Utilisateur</a></h1>
 
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <ul class="actions">
+            <li><a href="#" class="button primary icon solid fa-download">Retourner Outil</a></li>
+            <li><a href="#one" class="button icon solid fa-chevron-down scrolly">Demander outil</a></li>
+        </ul>
     </div>
-</div>
+    <div class="image phone"><div class="inner"><img src="images/phone.png" alt="" /></div></div>
+</header>
 
-<div class="card" aria-hidden="true">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title placeholder-glow">
-            <span class="placeholder col-6"></span>
-        </h5>
-        <p class="card-text placeholder-glow">
-            <span class="placeholder col-7"></span>
-            <span class="placeholder col-4"></span>
-            <span class="placeholder col-4"></span>
-            <span class="placeholder col-6"></span>
-            <span class="placeholder col-8"></span>
-        </p>
-        <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
-    </div>
-</div>
+<!-- One -->
+<section id="one" class="wrapper style2 special">
+    <form class="row g-3">
+        <div class="col-md-4">
+            <label for="validationDefault01" class="form-label">Numéro de Commande</label>
+            <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
+        </div>
+        <div class="col-md-3">
+            <label for="validationDefault05" class="form-label">Adresse spécifique</label>
+            <input type="text" class="form-control" id="validationDefault05" required>
+        </div>
+
+        </div>
+        <div class="col-md-3">
+            <label for="validationDefault04" class="form-label">Sélectionner Outils</label>
+            <select class="form-select" id="validationDefault04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+            </select>
+        </div>
+
+        <select name="choix">
+            <option value="choix1">Choix 1</option>
+            <option value="choix2">Choix 2</option>
+            <option value="choix3">Choix 3</option>
+            <option value="choix4">Choix 4</option>
+        </select>
+
+
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                    Valider Liste
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Send form</button>
+        </div>
+    </form>
+</section>
+
+
+<!-- Three -->
+<section id="three" class="wrapper style2 special">
+    <ul class="actions special">
+        <li><a href="#" class="button">Se déconnecter</a></li>
+    </ul>
+</section>
 
 
 
+<!-- Scripts -->
+<script src="views/js/jquery.min.js"></script>
+<script src="views/js/jquery.scrolly.min.js"></script>
+<script src="views/js/browser.min.js"></script>
+<script src="views/js/breakpoints.min.js"></script>
+<script src="views/js/util.js"></script>
+<script src="views/js/main.js"></script>
 
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

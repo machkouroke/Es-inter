@@ -1,7 +1,4 @@
 <?php
-namespace controllers;
-use models\Site;
-use view\sites\index;
 
 class Sites extends Controller
 {
@@ -12,7 +9,7 @@ class Sites extends Controller
 
     public function index(){
 
-        $users = $this->Site->getAll();
+        $sites = $this->Site->getAll();
 
         $this->render('index',compact('sites'));
     }
@@ -24,7 +21,7 @@ class Sites extends Controller
     public function add(){
         if(isset($_POST)){
             $this->loadFile('cli');
-            $this->User->add(...$_POST);
+            $this->Site->add(...$_POST);
             $success = "Nouvelle commande ajoutée";
             $this->render('form',compact('success'));
         }

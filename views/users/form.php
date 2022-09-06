@@ -8,7 +8,7 @@ $title = "Formulaire";
     <?php if(isset($success) ): ?>
         <div class="success"><?=$success?></div>
     <?php endif; ?>
-    <form action="index.php?p=users.add" method='post'
+    <form action="route.php?p=users.add" method='post'
           enctype='multipart/form-data'>
         <h2>Ajouter un nouvel utilisateur</h2>
         <div class="element">
@@ -44,4 +44,4 @@ $title = "Formulaire";
     </form>
 </div>
 <?php $content = ob_get_clean(); ?>
-<?php require_once(ROOT.'views/base.php') ?>
+<?php require_once(ROOT . 'views/base.php') ?>

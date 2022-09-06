@@ -7,5 +7,5 @@ $title = "Sites d'Intervention";
 <p><?=$site['Infos Sup']?></p>
 <p><?=$site['DateCom']?></p>
 <?php $content = ob_get_clean(); ?>
-<?php require_once(ROOT.'views/base.php') ?>
+<?php require_once(ROOT . 'views/base.php') ?>
 

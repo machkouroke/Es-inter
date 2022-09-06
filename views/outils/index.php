@@ -6,7 +6,7 @@ $title = "Outils";
 
 <section class="container">
     <div class="btn-new">
-        <a href="index.php?p=outils.form"><button class="btn-showForm" id="showForm">Nouvel Outil</button></a>
+        <a href="route.php?p=outils.form"><button class="btn-showForm" id="showForm">Nouvel Outil</button></a>
     </div>
 
     <div class="row">
@@ -34,9 +34,9 @@ $title = "Outils";
                         <td><?=$outil['Caracteristiques']?></td>
                         <td><?=$outil['DateAj']?></td>
                         <td class="d-flex flex-row justify-content-between align-middle">
-                            <a href="index.php?p=outils.show.<?=$outil['idoutil']?>"><i class="uil uil-eye text-info"></i></a>
+                            <a href="route.php?p=outils.show.<?=$outil['idoutil']?>"><i class="uil uil-eye text-info"></i></a>
                             <a href="#"><i class="uil uil-edit text-warning"></i></a>
-                            <a href="index.php?p=outils.delete.<?=$outil['idoutil']?>"><i class="uil uil-trash-alt text-danger"></i></a>
+                            <a href="route.php?p=outils.delete.<?=$outil['idoutil']?>"><i class="uil uil-trash-alt text-danger"></i></a>
                         </td>
                     </tr>
                 <?php endforeach;?>

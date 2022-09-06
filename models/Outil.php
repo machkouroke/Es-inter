@@ -1,7 +1,4 @@
 <?php
-namespace models;
-
-use controllers\Outils;
 
 
 class Outil extends Model

@@ -1,8 +1,5 @@
 <?php
 
-namespace controllers;
-use models\Outil;
-use view\outils\index;
 
 class Outils extends Controller
 {
@@ -24,7 +21,7 @@ class Outils extends Controller
     public function add(){
         if(isset($_POST)){
             $this->loadFile('Numserie');
-            $this->User->add(...$_POST);
+            $this->Outil->add(...$_POST);
             $success = "Outil bien ajouté";
             $this->render('form',compact('success'));
         }

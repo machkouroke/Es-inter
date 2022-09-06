@@ -7,5 +7,5 @@ $title = "Outils";
 <p><?=$outil['Caractéristiques']?></p>
 <p><?=$outil['DateAj']?></p>
 <?php $content = ob_get_clean(); ?>
-<?php require_once(ROOT.'views/base.php') ?>
+<?php require_once(ROOT . 'views/base.php') ?>
 

@@ -8,7 +8,6 @@
     private $password = "";
 
     protected $_connexion;
-    public $table;
 
     public function get_connection()
     {

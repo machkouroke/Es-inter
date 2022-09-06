@@ -1,10 +1,4 @@
 <?php
-namespace models;
-
-use views\accueil\log;
-use views\dash;
-use views\Esputilisateur\index;
-use controllers\OuvrePage;
 
 
 
