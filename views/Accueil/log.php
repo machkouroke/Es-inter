@@ -1,7 +1,3 @@
-<?php ob_start();
-$title = "Connection";
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,76 +5,61 @@ $title = "Connection";
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" type="text/css" href="Inscr.css">
+ <link rel="stylesheet" type="text/css" href="views/css/login.css">
  <title>ES-Inter</title>
  <link rel="icon" type="image/png" href="Medias/logprin.png">
-<style>
-  body{
-    background-color: white;
-  }
-</style>
-<script>
-  const inputs = document.querySelectorAll(".input");
 
-
-function addcl(){
- let parent = this.parentNode.parentNode;
- parent.classList.add("focus");
-}
-
-function remcl(){
- let parent = this.parentNode.parentNode;
- if(this.value === ""){
-  parent.classList.remove("focus");
- }
-}
-
-
-inputs.forEach(input => {
- input.addEventListener("focus", addcl);
- input.addEventListener("blur", remcl);
-});
-
-</script>
+<!--<script>-->
+<!--  const inputs = document.querySelectorAll(".input");-->
+<!---->
+<!---->
+<!--function addcl(){-->
+<!-- let parent = this.parentNode.parentNode;-->
+<!-- parent.classList.add("focus");-->
+<!--}-->
+<!---->
+<!--function remcl(){-->
+<!-- let parent = this.parentNode.parentNode;-->
+<!-- if(this.value === ""){-->
+<!--  parent.classList.remove("focus");-->
+<!-- }-->
+<!--}-->
+<!---->
+<!---->
+<!--inputs.forEach(input => {-->
+<!-- input.addEventListener("focus", addcl);-->
+<!-- input.addEventListener("blur", remcl);-->
+<!--});-->
+<!---->
+<!--</script>-->
 
 </head>
-<body>
- <div class="container">
-  <div class="img">
-    <img src="Medias/Maintr.mp4" alt=""/>
-  </div>
-  <div class="login-content">
-   <form action="route.php?action=login" method="post">
-    <img src="Medias/logprin.png" alt="">
-    <h2 class="title">Connection</h2>
-             <div class="input-div one">
-                <div class="i">
-                  <i class="fas fa-user"></i>
-                </div>
-                <div class="div">
+<body class="login">
 
-                  <input type="text" class="input" placeholder="Nom d'Utilisateur">
-                </div>
-             </div>
-             <div class="input-div pass">
-                <div class="i">
-                  <i class="fas fa-lock"></i>
-                </div>
-                <div class="div">
+    <div class="form">
+        <form action="route.php?action=login" method="post">
+            <h2 class="title">Connexion</h2>
 
-                  <input type="password" class="input" placeholder="Password">
-                </div>
-             </div>
-             <a href="#">Forgot Password?</a>
-             <input type="submit" class="btn" value="Login">
-            </form>
-        </div>
+            <div class="form-element">
+                <label>Nom d'utilisateur</label>
+                <input type="text" placeholder="Nom d'Utilisateur">
+            </div>
+            <div class="form-element">
+                <label>Mot de passe</label>
+                <input type="password"  placeholder="Mot de passe">
+            </div>
+            <div class="form-element">
+                <input type="submit" value="Se connecter">
+            </div>
+
+        </form>
     </div>
+
 </body>
 </html>
 
 
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require(ROOT . 'views\base.php'); ?>
+<!---->
+<?php //$content = ob_get_clean(); ?>
+<!---->
+<?php //require(ROOT . 'views\base.php'); ?>
