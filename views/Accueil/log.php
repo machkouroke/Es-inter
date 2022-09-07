@@ -37,7 +37,7 @@
 <body class="login">
 
     <div class="form">
-        <form action="route.php?action=login" method="post">
+        <form action="index.php?action=login" method="post">
             <h2 class="title">Connexion</h2>
 
             <div class="form-element">

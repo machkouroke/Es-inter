@@ -42,7 +42,7 @@ $headers = "From: " . "machkour@LOPStudio.com";
 foreach ($dest as $to) {
 if (!mail($to, $subject, $message, $headers)) {
 $_SESSION['error'] = "Une erreur est survenue lors de l'envoi du message";
-header("Location:route.php?action=sendMessage&error");
+header("Location:index.php?action=sendMessage&error");
 return;
 
 }

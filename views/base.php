@@ -31,19 +31,19 @@
     </div>
     <div class="menu-items">
         <ul class="nav-links">
-            <li><a href="route.php?p=dashboard">
+            <li><a href="index.php?p=dashboard">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
-            <li><a href="route.php?p=users">
+            <li><a href="index.php?p=users">
                     <i class="uil uil-users-alt"></i>
                     <span class="link-name">Users</span>
                 </a></li>
-            <li><a href="route.php?p=outils">
+            <li><a href="index.php?p=outils">
                     <i class="uil uil-trowel"></i>
                     <span class="link-name">Outils</span>
                 </a></li>
-            <li><a href="route.php?p=sites">
+            <li><a href="index.php?p=sites">
                     <i class="uil uil-globe"></i>
                     <span class="link-name">Interventions</span>
                 </a></li>

@@ -6,7 +6,7 @@ $title = "Sites d'Interventions";
 
 <section class="container">
     <div class="btn-new">
-        <a href="route.php?p=sites.form"><button class="btn-showForm" id="showForm">Nouvelle Commande</button></a>
+        <a href="index.php?p=sites.form"><button class="btn-showForm" id="showForm">Nouvelle Commande</button></a>
     </div>
 
     <div class="row">
@@ -31,9 +31,9 @@ $title = "Sites d'Interventions";
                         <td><?=$site['DateCom']?></td>
                         <td><?=$site['Infosup']?></td>
                         <td class="d-flex flex-row justify-content-between align-middle">
-                            <a href="route.php?p=sites.show.<?=$site['NumCom']?>"><i class="uil uil-eye text-info"></i></a>
+                            <a href="index.php?p=sites.show.<?=$site['NumCom']?>"><i class="uil uil-eye text-info"></i></a>
                             <a href="#"><i class="uil uil-edit text-warning"></i></a>
-                            <a href="route.php?p=sites.delete.<?=$site['NumCom']?>"><i class="uil uil-trash-alt text-danger"></i></a>
+                            <a href="index.php?p=sites.delete.<?=$site['NumCom']?>"><i class="uil uil-trash-alt text-danger"></i></a>
                         </td>
                     </tr>
                 <?php endforeach;?>
