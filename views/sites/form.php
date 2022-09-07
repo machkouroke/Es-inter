@@ -3,12 +3,12 @@ $title = "Formulaire";
 ?>
 <div class="container">
     <!--    <div class="btn-new">-->
-    <!--        <a href="index.php?p=users.form"><button class="userslist" >Nouvel utilisateur</button></a>-->
+    <!--        <a href="index.php?action=users.form"><button class="userslist" >Nouvel utilisateur</button></a>-->
     <!--    </div>-->
     <?php if(isset($success) ): ?>
         <div class="success"><?=$success?></div>
     <?php endif; ?>
-    <form action="index.php?p=site.add" method='post'
+    <form action="index.php?action=site.add" method='post'
           enctype='multipart/form-data'>
         <h2>Ajouter une nouvelle commande</h2>
         <div class="form">

@@ -9,15 +9,15 @@
     require_once(ROOT . "core/Controller.php");
 
     //separer les parametres
-    if (isset($_GET["p"])) {
-        if ((string)$_GET["p"] != "local") {
+    if (isset($_GET["action"])) {
+        if ($_GET["action"] != "local") {
 
-            $params = explode(".", (string)$_GET["p"]);
+            $params = explode(".", $_GET["action"]);
 
             //verifier si un parametre existe
             if ($params[0] != "") {
                 $controller = ucfirst($params[0]);
-                $action = isset($params[1]) ? $params[1] : 'index';
+                $action = $params[1] ?? 'index';
 
                 require_once(ROOT . 'controllers/' . $controller . '.php');
                 $controller = new $controller;

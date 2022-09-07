@@ -6,7 +6,7 @@ $title = "Utilisateurs";
 
 <section class="container">
     <div class="btn-new">
-        <a href="index.php?p=users.form"><button class="btn-showForm" id="showForm">Nouvel utilisateur</button></a>
+        <a href="index.php?action=users.form"><button class="btn-showForm" id="showForm">Nouvel utilisateur</button></a>
     </div>
 
     <div class="row">
@@ -34,9 +34,9 @@ $title = "Utilisateurs";
                         <td><?=$user['Contact']?></td>
                         <td><?=$user['Poste']?></td>
                         <td class="d-flex flex-row justify-content-between align-middle">
-                            <a href="index.php?p=users.show.<?=$user['Iduser']?>"><i class="uil uil-eye text-info"></i></a>
+                            <a href="index.php?action=users.show.<?=$user['Iduser']?>"><i class="uil uil-eye text-info"></i></a>
                             <a href="#"><i class="uil uil-edit text-warning"></i></a>
-                            <a href="index.php?p=users.delete.<?=$user['Iduser']?>"><i class="uil uil-trash-alt text-danger"></i></a>
+                            <a href="index.php?action=users.delete.<?=$user['Iduser']?>"><i class="uil uil-trash-alt text-danger"></i></a>
                         </td>
                     </tr>
                 <?php endforeach;?>
