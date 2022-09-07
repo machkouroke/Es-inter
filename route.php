@@ -31,10 +31,12 @@ if(isset($_GET["p"])){
             }
         }
     }
-else require_once (ROOT . "views/accueil/log.php");
+//    else {
+//        require_once
+//    }
 }
 
-else require_once(ROOT . "views/dash.php");
+else require_once(ROOT . "views/accueil/log.php");
 
 
 
