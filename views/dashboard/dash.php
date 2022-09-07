@@ -5,7 +5,7 @@ $title = "Dashboard";
     <div class="boxes">
         <a href="#" class="box box1">
             <i class="uil uil-users-alt"></i>
-            <span class="text">Totals Utilisateurs</span>
+            <span class="text">Total Utilisateurs</span>
             <span class="number"><?=$nbusers?></span>
         </a>
         <a  href="#" class="box box2">
