@@ -6,7 +6,7 @@
     use Exception\UserException;
     use models\User;
 
-    class Authentification
+    class Authentication
     {
         /**
          * Authentifie un utilisateur
@@ -21,6 +21,7 @@
 
             try {
                 $user = User::getByUserName($login);
+
                 if ($user) {
                     if ($user->password == $password) {
                         return $user;

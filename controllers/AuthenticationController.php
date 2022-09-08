@@ -5,7 +5,7 @@
     use Closure;
     use Exception\DataBaseException;
     use Exception\UserException;
-    use models\authentication\Authentification;
+    use models\authentication\Authentication;
 
     /**
      * Contient les fonctionnalités requises à l'authentification de l'utilisateur
@@ -56,7 +56,7 @@
         {
 
             try {
-                $_SESSION['User'] = Authentification::authenticate($_POST['username'], $_POST['password']);
+                $_SESSION['User'] = Authentication::authenticate($_POST['username'], $_POST['password']);
                 header(INDEX_LOCATION);
             } catch (DataBaseException|UserException $e) {
                 $query = ['error' => $e->getMessage()];
