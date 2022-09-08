@@ -3,6 +3,7 @@
     namespace models;
 
 
+    use config\enum\Role;
     use Exception\DataBaseException;
     use Exception\UserException;
     use PDO;
@@ -10,7 +11,8 @@
 
     class User
     {
-        public string $id, $name, $poste, $photo, $contact, $mail, $role, $surname, $password, $username;
+        public string $id, $name, $poste, $photo, $contact, $mail, $surname, $password, $username;
+        public Role $role;
 
         public function __construct(...$data)
         {
@@ -21,8 +23,8 @@
             $this->photo = $data["Photo"];
             $this->contact = $data["Contact"];
             $this->mail = $data["Mail"];
-            $this->role = $data["Role"];
-            $this->username = $data["username"];
+            $this->role = Role::from($data["Role"]);
+            $this->username =   $data["username"];
         }
 
 
@@ -87,7 +89,8 @@
 
         public function getUserTable(): array
         {
+
             return [$this->id, $this->name, $this->poste, $this->photo,
-                $this->contact, $this->mail, $this->role, $this->password, $this->surname];
+                $this->contact, $this->mail, $this->role->value, $this->password, $this->surname];
         }
     }

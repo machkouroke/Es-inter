@@ -14,7 +14,7 @@ class Accueil extends DatabaseConnector
      * Authentifie un utilisateur
      * @param string $login Login saisi par l'utilisateur
      * @param string $password Password saisi par l'utilisateur'
-     * @throws UserException Jeté quand les informations sont incorrects
+     * @throws UserException Jeté quand les informations sont incorrectes
      * @throws DataBaseException Erreur lors de la lecture des données à la base de données
      */
     public static function authenticate(string $login, string $password): User
