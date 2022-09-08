@@ -5,6 +5,7 @@
 
     use Exception\DataBaseException;
     use Exception\UserException;
+    use PDO;
     use PDOException;
 
     class User
@@ -13,15 +14,14 @@
 
         public function __construct(...$data)
         {
-
-            $this->name = $data["name"];
-            $this->surname = $data["surname"];
+            $this->name = $data["Name"];
+            $this->surname = $data["Surname"];
             $this->password = $data["password"];
-            $this->poste = $data["poste"];
-            $this->photo = $data["photo"];
-            $this->contact = $data["contact"];
-            $this->mail = $data["mail"];
-            $this->role = $data["role"];
+            $this->poste = $data["Poste"];
+            $this->photo = $data["Photo"];
+            $this->contact = $data["Contact"];
+            $this->mail = $data["Mail"];
+            $this->role = $data["Role"];
             $this->username = $data["username"];
         }
 
@@ -42,12 +42,12 @@
             return $res->fetch();
         }
 
-        public static function getByUserName($login)
+        public static function getByUserName($login): User
         {
             $con = DATABASE_CONNECTOR->get_connection();
             $sql = "SELECT * FROM users WHERE username='" . $login . "'";
-            $res = $con->query($sql);
-            return $res->fetch();
+            $res = $con->query($sql)->fetch(PDO::FETCH_ASSOC);
+            return new User(...$res);
         }
 
         /**
@@ -59,7 +59,7 @@
             try {
                 $con = DATABASE_CONNECTOR->get_connection();
 
-                $sql = 'INSERT INTO users(Iduser,Nom, Poste, Photo, Contact, Mail, Role, password, Prenom) 
+                $sql = 'INSERT INTO users(Iduser,Name, Poste, Photo, Contact, Mail, Role, password, Surname) 
                         values(?,?,?,?,?,?,?, ?, ?) ';
                 $statement = $con->prepare($sql);
                 $userInfo = $this->getUserTable();
