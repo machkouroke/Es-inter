@@ -1,5 +1,7 @@
 <?php
-
+    /* TODO:
+           Créer une classe hydraté c'est à dire basé sur le model de la base de données ce genre de code n'est pas
+            très maintenable. Tu peux te baser sur la table User que j'ai deja fait  */
     use config\DatabaseConnector;
 
     class Site extends DatabaseConnector
@@ -8,13 +10,13 @@
     public function __construct(){
         $this->get_connection();
     }
-    public function getAll(){
+    public static function getAll(){
         $sql = "SELECT * FROM Sites";
         $res = $this->_connexion->query($sql);
         return $res->fetchAll();
     }
 
-    public function getById($id){
+    public static function getById($id){
         $sql = "SELECT * FROM Sites WHERE NumCom='".$id."'";
         $res = $this->_connexion->query($sql);
         return $res->fetch();

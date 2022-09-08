@@ -1,4 +1,7 @@
 <?php
+    /* TODO:
+        Créer une classe hydraté c'est à dire basé sur le model de la base de données ce genre de code n'est pas
+        très maintenable. Tu peux te baser sur la table User que j'ai déja fait  */
 
     namespace models;
 
@@ -24,7 +27,7 @@
             $this->contact = $data["Contact"];
             $this->mail = $data["Mail"];
             $this->role = Role::from($data["Role"]);
-            $this->username =   $data["username"];
+            $this->username = $data["username"];
         }
 
 

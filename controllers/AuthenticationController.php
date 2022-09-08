@@ -75,4 +75,9 @@
             session_destroy();
             header(INDEX_LOCATION);
         }
+
+        public static function index(): void
+        {
+            header(INDEX_LOCATION);
+        }
     }
