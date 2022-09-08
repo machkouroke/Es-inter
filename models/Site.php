@@ -1,6 +1,8 @@
 <?php
 
-class Site extends Model
+    use config\DatabaseConnector;
+
+    class Site extends DatabaseConnector
 {
 
     public function __construct(){

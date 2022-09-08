@@ -1,12 +1,13 @@
 <?php
 
+    use config\DatabaseConnector;
 
 
-/**
+    /**
 
  * Gère le système d'authentification
  */
-class Accueil extends model
+class Accueil extends DatabaseConnector
 {
     /**
      * Authentifie un utilisateur

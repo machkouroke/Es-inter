@@ -1,7 +1,9 @@
 <?php
 
 
-class Outil extends Model
+    use config\DatabaseConnector;
+
+    class Outil extends DatabaseConnector
 {
 
     public function __construct(){
