@@ -1,48 +1,84 @@
 <?php
 
-class User extends Model
-{
-
-    public function __construct(){
-        $this->get_connection();
-
-    }
+    namespace models;
 
 
-    public function getAll(){
-        $sql = "SELECT * FROM Utilisateurs";
-        $res = $this->_connexion->query($sql);
-        return $res->fetchAll();
-    }
+    use Exception\DataBaseException;
+    use Exception\UserException;
+    use PDOException;
 
-    public function getById($id){
-        $sql = "SELECT * FROM Utilisateurs WHERE Iduser='".$id."'";
-        $res = $this->_connexion->query($sql);
-        return $res->fetch();
-    }
-
-    public function add(string ...$data){
-        $sql = "INSERT INTO Utilisateurs(Iduser,Nom,Prenom, Poste, Photo, Contact, Email) values(NULL,?,?,?,?,?,?) ";
-        $statement = $this->_connexion->prepare($sql);
-        $userdata =[$data['name'],$data['surname'],$data['post'],$data['userprofil'],$data['tel'],$data['email']];
-        $statement->execute($userdata);
-    }
-
-    public function del($id){
-        $sql ="DELETE FROM Utilisateurs where Iduser='".$id."'";
-        $res = $this->_connexion->query($sql);
-        return $res;
-
-    }
-
-    public static function getByLogin(string $role): User|bool
+    class User
     {
-        $con = FACTORY->get_connexion();
-        $sql = "select * from Utilisateurs where Role='" . $role . "'";
-        if ($res = ($con->query($sql))->fetch(PDO::FETCH_ASSOC)) {
-            return new User(...$res);
-        }
-        return false;
+        protected string $id, $name, $poste, $photo, $contact, $mail, $role, $surname, $password;
 
+        public function __construct(...$data)
+        {
+
+            $this->name = $data["name"];
+            $this->surname = $data["surname"];
+            $this->password = $data["password"];
+            $this->poste = $data["poste"];
+            $this->photo = $data["photo"];
+            $this->contact = $data["contact"];
+            $this->mail = $data["mail"];
+            $this->role = $data["role"];
+        }
+
+
+        public static function getAll(): bool|array
+        {
+            $con = DATABASE_CONNECTOR->get_connection();
+            $sql = "SELECT * FROM users";
+            $res = $con->query($sql);
+            return $res->fetchAll();
+        }
+
+        public static function getById($id)
+        {
+            $con = DATABASE_CONNECTOR->get_connection();
+            $sql = "SELECT * FROM users WHERE Iduser='" . $id . "'";
+            $res = $con->query($sql);
+            return $res->fetch();
+        }
+
+        /**
+         * @throws UserException
+         * @throws DataBaseException
+         */
+        public function add(): void
+        {
+            try {
+                $con = DATABASE_CONNECTOR->get_connection();
+
+                $sql = 'INSERT INTO users(Iduser,Nom, Poste, Photo, Contact, Mail, Role, password, Prenom) 
+                        values(?,?,?,?,?,?,?, ?, ?) ';
+                $statement = $con->prepare($sql);
+                $userInfo = $this->getUserTable();
+                $statement->execute($userInfo);
+            } catch (PDOException $e) {
+
+                if ($e->getCode() == 23000) {
+                    throw new UserException("Le nom d'utilisateur existe déja");
+                }
+
+                throw new DataBaseException('Erreur: ' . $e->getMessage());
+
+            }
+
+        }
+
+        public function delete($id): void
+        {
+            $con = DATABASE_CONNECTOR->get_connection();
+            $sql = "DELETE FROM users where Iduser='" . $id . "'";
+            $con->query($sql);
+
+        }
+
+
+        public function getUserTable(): array
+        {
+            return [$this->id, $this->name, $this->poste, $this->photo,
+                $this->contact, $this->mail, $this->role, $this->password, $this->surname];
+        }
     }
-}
