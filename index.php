@@ -44,7 +44,23 @@
 
     if (isset($_SESSION['User'])) {
         if (isset($_GET['action'])) {
-            print("Vous êtes déjà connecté");
+            switch ($_GET['action']) {
+                case 'user':
+                    AdminController::userlist();
+                    break;
+                case 'outils':
+                    AdminController::outils();
+                    break;
+                case 'sites':
+                    AdminController::sites();
+                    break;
+                case 'logout':
+                    AuthenticationController::logout();
+                    break;
+                default:
+                    AuthenticationController::index();
+
+            }
 
         } else if ($_SESSION['User']->role == Role::Employee) {
             EmployeeController::employeePage();
