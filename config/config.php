@@ -1,6 +1,5 @@
 <?php
 
-    define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
     define('BASE_DIR', $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR);
 
     /**
