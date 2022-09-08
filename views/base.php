@@ -10,7 +10,7 @@
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.0/dist/bootstrap-table.min.css">
-    <link rel="stylesheet" href="views/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="<?= CSS_URL?>style.css" type="text/css"/>
 
 
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -18,11 +18,11 @@
     <title><?= $title ?></title>
 </head>
 <body>
-<!--    <h2>--><?php //echo CSS_URL ?><!--</h2>-->
+
 <nav>
     <div class="logo-name">
         <div class="logo-image">
-            <img src="images/esinter.png" alt="">
+            <img src="<?= IMG_URL?>esinter.png" alt="">
         </div>
         <span class="logo_name">
                 <span class="title">ES INTER</span>

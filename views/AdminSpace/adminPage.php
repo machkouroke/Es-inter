@@ -21,4 +21,4 @@ $title = "Dashboard";
     </div>
 
 <?php $content = ob_get_clean(); ?>
-<?php require_once(ROOT . 'views/base.php') ?>
+<?php require_once(BASE_DIR . 'views/base.php') ?>
