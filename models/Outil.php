@@ -14,10 +14,11 @@
             $this->get_connection();
         }
 
-        public function getAll()
+        public static function getAll(): bool|array
         {
+            $con = DATABASE_CONNECTOR->get_connection();
             $sql = "SELECT * FROM Outils";
-            $res = $this->_connexion->query($sql);
+            $res = $con->query($sql);
             return $res->fetchAll();
         }
 

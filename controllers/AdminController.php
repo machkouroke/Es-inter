@@ -14,11 +14,11 @@
             };
             $employeePage();
         }
-        public static function outils()
+        public static function outils(): void
         {
             $outilsPage = function () {
                 $outils = Outil::getAll();
-                require(BASE_DIR . 'views/outils/index.php');
+                require(BASE_DIR . 'views/outils/mainPage.php');
             };
             $outilsPage();
         }
