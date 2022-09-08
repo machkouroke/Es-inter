@@ -10,4 +10,10 @@
      */
     const BASE_URL = '';
     const INDEX_LOCATION = 'Location:index.php';
-    const DATABASE_CONNECTOR = new DatabaseConnector("mysql:host=localhost;dbname=Esinter", 'root', '');
+    const DATABASE_CONNECTOR = new DatabaseConnector("mysql:host=localhost;dbname=Esinter", 'root', 'claudine');
+    const ERROR_FILE = 'log/php_error.log';
+
+    function logging($message): void
+    {
+        error_log($message . "\n", 3, ERROR_FILE);
+    }
