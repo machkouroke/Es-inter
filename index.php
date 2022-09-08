@@ -5,7 +5,6 @@
         require_once($path);
     });
     require_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config\config.php');
-    require_once(BASE_DIR . "core/Model.php");
     use controllers\AuthenticationController;
 
 //    //separer les parametres
@@ -38,20 +37,22 @@
 //    }
     session_start();
     if (isset($_SESSION['User'])) {
-        if (isset($_GET['action'])) {
-            switch ($_GET['action']) {
-                case 'addStudentPage':
-                    MenuController::addStudent();
-                    break;
-
-                default:
-                    MenuController::menu();
-            }
-
-        } else {
-            MenuController::menu();
-        }
+        print('Connected');
+//        if (isset($_GET['action'])) {
+//            switch ($_GET['action']) {
+//                case 'addStudentPage':
+//                    MenuController::addStudent();
+//                    break;
+//
+//                default:
+//                    MenuController::menu();
+//            }
+//
+//        } else {
+//            MenuController::menu();
+//        }
     } else {
+
         if (isset($_GET['action']) && $_GET['action'] == 'login') {
             AuthenticationController::login();
 
@@ -62,4 +63,3 @@
     }
 
 
-?>
