@@ -1,7 +1,12 @@
 <?php
 
     namespace controllers;
+
     use Closure;
+    use Exception\DataBaseException;
+    use Exception\UserException;
+    use models\authentication\Authentification;
+
     /**
      * Contient les fonctionnalités requises à l'authentification de l'utilisateur
      */
@@ -37,7 +42,7 @@
         }
 
         /**
-         * redirige l'utilisateur vers la page d'accueil
+         * Redirige l'utilisateur vers la page d'accueil
          */
         public static function loginPage(): void
         {
@@ -45,7 +50,7 @@
         }
 
         /**
-         * fonction permettant de se connecter
+         * Fonction permettant de se connecter
          */
         public static function login(): void
         {
@@ -54,17 +59,15 @@
                 $_SESSION['User'] = Authentification::authenticate($_POST['username'], $_POST['password']);
                 header(INDEX_LOCATION);
             } catch (DataBaseException|UserException $e) {
-
                 $query = ['error' => $e->getMessage()];
                 header(INDEX_LOCATION . '?' . http_build_query($query));
-
             }
 
 
         }
 
         /**
-         * fonction permettant de se deconnecter
+         * Fonction permettant de se déconnecter
          */
         public static function logout(): void
         {

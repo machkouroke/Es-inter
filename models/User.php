@@ -9,7 +9,7 @@
 
     class User
     {
-        protected string $id, $name, $poste, $photo, $contact, $mail, $role, $surname, $password;
+        public string $id, $name, $poste, $photo, $contact, $mail, $role, $surname, $password, $username;
 
         public function __construct(...$data)
         {
@@ -22,6 +22,7 @@
             $this->contact = $data["contact"];
             $this->mail = $data["mail"];
             $this->role = $data["role"];
+            $this->username = $data["username"];
         }
 
 
@@ -37,6 +38,14 @@
         {
             $con = DATABASE_CONNECTOR->get_connection();
             $sql = "SELECT * FROM users WHERE Iduser='" . $id . "'";
+            $res = $con->query($sql);
+            return $res->fetch();
+        }
+
+        public static function getByUserName($login)
+        {
+            $con = DATABASE_CONNECTOR->get_connection();
+            $sql = "SELECT * FROM users WHERE username='" . $login . "'";
             $res = $con->query($sql);
             return $res->fetch();
         }

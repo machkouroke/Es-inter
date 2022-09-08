@@ -1,7 +1,9 @@
 <?php
 
+    use config\enum\Role;
 
-/**
+
+    /**
 * ouvre la page de l'utilisateur
 */
 public static function ouvrepage(): void

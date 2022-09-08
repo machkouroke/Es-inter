@@ -1,6 +1,7 @@
 <?php
 
     use config\DatabaseConnector;
+    use config\enum\Role;
 
 
     /**
