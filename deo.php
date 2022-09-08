@@ -1,2 +1,2 @@
 <?php
-    echo 'Coucou deodat'
+    echo 'Coucou deodat';
