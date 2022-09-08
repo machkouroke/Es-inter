@@ -26,7 +26,7 @@
         }
 
         /**
-         * Fonction permettant de verifier si un utilisateur a un role defini afin d'en avoir les fonctionnalites
+         * Fonction permettant de verifier si un utilisateur a un role definit afin d'en avoir les fonctionnalités
          * specifiques
          * @param Closure $action
          * @param bool $role

@@ -5,7 +5,11 @@
         require_once($path);
     });
     require_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config\config.php');
+
+    use config\enum\Role;
+    use controllers\AdminController;
     use controllers\AuthenticationController;
+    use controllers\EmployeeController;
 
 //    //separer les parametres
 //    if (isset($_GET["action"])) {
@@ -35,22 +39,20 @@
 //    } else {
 //        require_once(ROOT . "views/accueil/log.php");
 //    }
+
     session_start();
+
     if (isset($_SESSION['User'])) {
-        print('Connected');
-//        if (isset($_GET['action'])) {
-//            switch ($_GET['action']) {
-//                case 'addStudentPage':
-//                    MenuController::addStudent();
-//                    break;
-//
-//                default:
-//                    MenuController::menu();
-//            }
-//
-//        } else {
-//            MenuController::menu();
-//        }
+        if (isset($_GET['action'])) {
+            print("Vous êtes déjà connecté");
+
+        } else if ($_SESSION['User']->role == Role::Employee) {
+            EmployeeController::employeePage();
+        } else if ($_SESSION['User']->role == Role::Admin) {
+            AdminController::adminPage();
+        }
+
+
     } else {
 
         if (isset($_GET['action']) && $_GET['action'] == 'login') {
