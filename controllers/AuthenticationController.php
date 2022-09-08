@@ -51,7 +51,6 @@
         {
 
             try {
-
                 $_SESSION['User'] = Authentification::authenticate($_POST['username'], $_POST['password']);
                 header(INDEX_LOCATION);
             } catch (DataBaseException|UserException $e) {
